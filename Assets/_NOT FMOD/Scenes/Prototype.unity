@@ -503,6 +503,7 @@ MonoBehaviour:
   horizontalRayCount: 4
   verticalRayCount: 4
   maxClimbAngle: 80
+  maxDescendAngle: 70
 --- !u!61 &789701683
 BoxCollider2D:
   m_ObjectHideFlags: 0
