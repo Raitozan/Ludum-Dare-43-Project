@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
 
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-		if(Input.GetButton("Jump") && controller.collisions.below)
+		if(Input.GetButtonDown("Jump") && controller.collisions.below)
 			velocity.y = jumpVelocity;
 
 		float targetVelocityX = input.x * moveSpeed;
