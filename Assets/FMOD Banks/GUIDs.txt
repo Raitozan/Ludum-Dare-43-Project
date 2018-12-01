@@ -1,3 +1,5 @@
+{c283d051-3074-455d-b14a-778d5bc06deb} event:/robot/jump
+{743153b8-9e1f-4207-a9d5-e15dd0e5b9f9} event:/robot/move
 {9b84eabf-c73a-401a-900a-cd8dcedb5527} event:/test
 {1395044b-298a-4c40-b2ee-d61f31864d0e} bus:/
 {f6937add-cfef-4685-a70d-e8d9e5d5fe53} bus:/Reverb

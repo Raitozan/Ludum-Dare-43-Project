@@ -11,15 +11,20 @@ public class Player : MonoBehaviour
 	public float accelerationTimeGrounded;
 	public float moveSpeed;
 
-	float gravity;
+    private bool isMoving = false;
+
+    float gravity;
 	float jumpVelocity;
 
 	Vector3 velocity;
 	float velocityXSmoothing;
+    float sfxVelocity = 0f;
 
-	Controller2D controller;
+    Controller2D controller;
 
-	void Start ()
+    private FMOD.Studio.EventInstance robotMovementSFX;
+
+    void Start ()
 	{
 		controller = GetComponent<Controller2D>();
 
@@ -35,12 +40,54 @@ public class Player : MonoBehaviour
 
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-		if(Input.GetButtonDown("Jump") && controller.collisions.below)
-			velocity.y = jumpVelocity;
+        if (Input.GetButtonDown("Jump") && controller.collisions.below)
+        {
+            velocity.y = jumpVelocity;
+            FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_JUMP, GetComponent<Transform>().position);  // jump sound      
+        }
 
-		float targetVelocityX = input.x * moveSpeed;
+        sfxVelocity = velocity.y;
+
+        float targetVelocityX = input.x * moveSpeed;
 		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move(velocity * Time.deltaTime);
-	}
+
+        if (targetVelocityX != 0 && (!Input.GetButtonDown("Jump"))) // checking if player moving, then executing MovementSFX
+        {
+            if (!isMoving)
+            {
+                MovementSFX();
+                isMoving = true;
+            }
+        }
+
+        if (targetVelocityX == 0 || Input.GetButtonDown("Jump") || sfxVelocity != 0)
+        {
+            MovementSFXStop();
+            isMoving = false;
+        }
+
+    }
+
+
+    #region SFX methods
+
+    void MovementSFX() // starts movement Loop
+    {
+        robotMovementSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.ROBOT_MOVE);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(robotMovementSFX, this.transform, GetComponent<Rigidbody>());
+        robotMovementSFX.start();
+    }
+
+    void MovementSFXStop()
+    {
+        robotMovementSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //stopping movement sound when jumping
+        robotMovementSFX.release();
+    }
+
+    #endregion
+
+
+
 }
