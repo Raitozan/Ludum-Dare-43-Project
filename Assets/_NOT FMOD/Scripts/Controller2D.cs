@@ -17,7 +17,7 @@ public class Controller2D : MonoBehaviour
 	float horizontalRaySpacing;
 	float verticalRaySpacing;
 
-	BoxCollider2D boxCollider;
+	public BoxCollider2D boxCollider;
 	RaycastOrigins raycastOrigins;
 	public CollisionsInfo collisions;
 
@@ -181,6 +181,27 @@ public class Controller2D : MonoBehaviour
 		}
 	}
 
+	public void Crouch()
+	{
+		boxCollider.size = new Vector2(1, 0.5f);
+		boxCollider.offset = new Vector2(0, -0.25f);
+		CalculateRaySpacing();
+	}
+
+	public void Uncrouch(ref bool isCrouching)
+	{
+		float rayLength = 0.5f;
+		Vector2 rayOrigin = transform.position;
+		RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, collisionMask);
+		if (!hit)
+		{
+			boxCollider.size = new Vector2(1, 1);
+			boxCollider.offset = new Vector2(0, 0);
+			CalculateRaySpacing();
+			isCrouching = false;
+		}
+	}
+
 	void UpdateRaycastOrigins()
 	{
 		Bounds bounds = boxCollider.bounds;
@@ -192,7 +213,7 @@ public class Controller2D : MonoBehaviour
 		raycastOrigins.topRight = new Vector2(bounds.max.x, bounds.max.y);
 	}
 
-	void CalculateRaySpacing()
+	public void CalculateRaySpacing()
 	{
 		Bounds bounds = boxCollider.bounds;
 		bounds.Expand(skinWidth * -2);
