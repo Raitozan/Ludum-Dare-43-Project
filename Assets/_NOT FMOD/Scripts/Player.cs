@@ -43,35 +43,38 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (controller.collisions.above || controller.collisions.below)
-			velocity.y = 0;
-
-		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-		if(Input.GetButtonDown("Jump") && controller.collisions.below)
-			velocity.y = jumpVelocity;
-
-		if (Input.GetButtonDown("Crouch"))
+		if (!GameManager.instance.gamePaused)
 		{
-			isCrouching = true;
-			controller.Crouch();
-		}
-		if (!Input.GetButton("Crouch") && isCrouching)
-		{
-			controller.Uncrouch(ref isCrouching);
-		}
+			if (controller.collisions.above || controller.collisions.below)
+				velocity.y = 0;
 
-		float targetVelocityX = input.x * moveSpeed;
-		if (isCrouching)
-			targetVelocityX *= crouchModificator;
-		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
-		velocity.y += gravity * Time.deltaTime;
-		controller.Move(velocity * Time.deltaTime);
+			Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-		if (Input.GetButtonDown("Ability1"))
-			abilities[ability1]();
-		if (Input.GetButtonDown("Ability2"))
-			abilities[ability2]();
+			if (Input.GetButtonDown("Jump") && controller.collisions.below)
+				velocity.y = jumpVelocity;
+
+			if (Input.GetButtonDown("Crouch"))
+			{
+				isCrouching = true;
+				controller.Crouch();
+			}
+			if (!Input.GetButton("Crouch") && isCrouching)
+			{
+				controller.Uncrouch(ref isCrouching);
+			}
+
+			float targetVelocityX = input.x * moveSpeed;
+			if (isCrouching)
+				targetVelocityX *= crouchModificator;
+			velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
+			velocity.y += gravity * Time.deltaTime;
+			controller.Move(velocity * Time.deltaTime);
+
+			if (Input.GetButtonDown("Ability1"))
+				abilities[ability1]();
+			if (Input.GetButtonDown("Ability2"))
+				abilities[ability2]();
+		}
 	}
 
 	public void Dash()
