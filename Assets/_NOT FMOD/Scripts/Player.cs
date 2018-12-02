@@ -34,10 +34,10 @@ public class Player : MonoBehaviour
 		gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
 		jumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 
-		abilities.Add(capa1);
-		abilities.Add(capa2);
-		abilities.Add(capa3);
-		abilities.Add(capa4);
+		abilities.Add(Dash);
+		abilities.Add(Burn);
+		abilities.Add(Climb);
+		abilities.Add(DoubleJump);
 	}
 	
 	// Update is called once per frame
@@ -74,24 +74,24 @@ public class Player : MonoBehaviour
 			abilities[ability2]();
 	}
 
-	public void capa1()
+	public void Dash()
 	{
-		Debug.Log("1");
+		Debug.Log("Dash");
 	}
 
-	public void capa2()
+	public void Burn()
 	{
-		Debug.Log("2");
+		Debug.Log("Burn");
 	}
 
-	public void capa3()
+	public void Climb()
 	{
-		Debug.Log("3");
+		Debug.Log("Climb");
 	}
 
-	public void capa4()
+	public void DoubleJump()
 	{
-		Debug.Log("4");
+		Debug.Log("DoubleJump");
 	}
 
 	public void changeAbility(int ind)
