@@ -188,11 +188,18 @@ public class Controller2D : MonoBehaviour
 		CalculateRaySpacing();
 	}
 
-	public void Uncrouch()
+	public void Uncrouch(ref bool isCrouching)
 	{
-		boxCollider.size = new Vector2(1, 1);
-		boxCollider.offset = new Vector2(0, 0);
-		CalculateRaySpacing();
+		float rayLength = 0.5f;
+		Vector2 rayOrigin = transform.position;
+		RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, collisionMask);
+		if (!hit)
+		{
+			boxCollider.size = new Vector2(1, 1);
+			boxCollider.offset = new Vector2(0, 0);
+			CalculateRaySpacing();
+			isCrouching = false;
+		}
 	}
 
 	void UpdateRaycastOrigins()

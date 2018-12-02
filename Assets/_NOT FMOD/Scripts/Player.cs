@@ -46,10 +46,9 @@ public class Player : MonoBehaviour
 			isCrouching = true;
 			controller.Crouch();
 		}
-		if (Input.GetButtonUp("Crouch"))
+		if (!Input.GetButton("Crouch") && isCrouching)
 		{
-			isCrouching = false;
-			controller.Uncrouch();
+			controller.Uncrouch(ref isCrouching);
 		}
 
 		float targetVelocityX = input.x * moveSpeed;
@@ -58,10 +57,5 @@ public class Player : MonoBehaviour
 		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move(velocity * Time.deltaTime);
-	}
-
-	void Crouch()
-	{
-
 	}
 }
