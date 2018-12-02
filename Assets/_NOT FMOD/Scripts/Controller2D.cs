@@ -181,6 +181,20 @@ public class Controller2D : MonoBehaviour
 		}
 	}
 
+	public void Crouch()
+	{
+		boxCollider.size = new Vector2(1, 0.5f);
+		boxCollider.offset = new Vector2(0, -0.25f);
+		CalculateRaySpacing();
+	}
+
+	public void Uncrouch()
+	{
+		boxCollider.size = new Vector2(1, 1);
+		boxCollider.offset = new Vector2(0, 0);
+		CalculateRaySpacing();
+	}
+
 	void UpdateRaycastOrigins()
 	{
 		Bounds bounds = boxCollider.bounds;

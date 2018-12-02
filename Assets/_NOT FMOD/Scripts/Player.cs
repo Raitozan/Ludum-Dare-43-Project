@@ -44,19 +44,13 @@ public class Player : MonoBehaviour
 		if (Input.GetButtonDown("Crouch"))
 		{
 			isCrouching = true;
-			controller.boxCollider.size = new Vector2(1, 0.5f);
-			controller.boxCollider.offset = new Vector2(0, -0.25f);
-			controller.CalculateRaySpacing();
+			controller.Crouch();
 		}
 		if (Input.GetButtonUp("Crouch"))
 		{
 			isCrouching = false;
-			controller.boxCollider.size = new Vector2(1, 1);
-			controller.boxCollider.offset = new Vector2(0, 0);
-			controller.CalculateRaySpacing();
+			controller.Uncrouch();
 		}
-
-
 
 		float targetVelocityX = input.x * moveSpeed;
 		if (isCrouching)
