@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Burning : MonoBehaviour {
 
-	public float lifetime = 0.05f;
+	public float lifetime;
 
 	private void Update()
 	{
