@@ -34,13 +34,18 @@ public class Player : MonoBehaviour
 	[HideInInspector] public int ability1;
 	[HideInInspector] public int ability2;
 
+	//DASH
 	[HideInInspector] public bool canDash;
 	[HideInInspector] public bool isDashing;
-
 	[Header("Dash Settings")]
 	public float dashmoveSpeed;
 	public float dashDuration;
 	public float dashAcceleration;
+
+	//BURN
+	[HideInInspector]
+	public bool isRight = true;
+	public GameObject burningPrefab;
 
 	void Start ()
 	{
@@ -102,13 +107,18 @@ public class Player : MonoBehaviour
 			if (controller.collisions.below)
 				canDash = true;
 
+
             if (targetVelocityX != 0 && (!Input.GetButtonDown("Jump"))) // checking if player moving, then executing MovementSFX
             {
                 if (!isMoving)
                 {
                     MovementSFX();
                     isMoving = true;
-                }
+					if (targetVelocityX > 0)
+						isRight = true;
+					else if (targetVelocityX < 0)
+						isRight = false;
+				}
             }
 
             if (targetVelocityX == 0 || Input.GetButtonDown("Jump") || sfxVelocity != 0)
@@ -146,7 +156,8 @@ public class Player : MonoBehaviour
 
 	public void Burn()
 	{
-		Debug.Log("Burn");
+		float xPos = (isRight) ? 1 : -1;
+		Instantiate(burningPrefab, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z), Quaternion.identity, transform);
 	}
 
 	public void Climb()
