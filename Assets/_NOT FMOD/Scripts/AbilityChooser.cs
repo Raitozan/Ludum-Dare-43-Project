@@ -44,6 +44,10 @@ public class AbilityChooser : MonoBehaviour
 
 			switch (player.ability1)
 			{
+				case -1:
+					capacity1.sprite = null;
+					capacity1.color = new Color(1, 1, 1, 0);
+					break;
 				case 0:
 					capacity1.sprite = dash;
 					break;
@@ -59,6 +63,10 @@ public class AbilityChooser : MonoBehaviour
 			}
 			switch (player.ability2)
 			{
+				case -1:
+					capacity2.sprite = null;
+					capacity2.color = new Color(1, 1, 1, 0);
+					break;
 				case 0:
 					capacity2.sprite = dash;
 					break;
