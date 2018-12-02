@@ -22,12 +22,24 @@ public class Player : MonoBehaviour
 
 	Controller2D controller;
 
+	delegate void Ability();
+	List<Ability> abilities = new List<Ability>();
+	public int ability1;
+	public int ability2;
+
 	void Start ()
 	{
 		controller = GetComponent<Controller2D>();
 
 		gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
 		jumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
+
+		abilities.Add(capa1);
+		abilities.Add(capa2);
+		abilities.Add(capa3);
+		abilities.Add(capa4);
+		ability1 = 0;
+		ability2 = 1;
 	}
 	
 	// Update is called once per frame
@@ -57,5 +69,30 @@ public class Player : MonoBehaviour
 		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move(velocity * Time.deltaTime);
+
+		if (Input.GetButtonDown("Ability1"))
+			abilities[ability1]();
+		if (Input.GetButtonDown("Ability2"))
+			abilities[ability2]();
+	}
+
+	public void capa1()
+	{
+		Debug.Log("1");
+	}
+
+	public void capa2()
+	{
+		Debug.Log("2");
+	}
+
+	public void capa3()
+	{
+		Debug.Log("3");
+	}
+
+	public void capa4()
+	{
+		Debug.Log("4");
 	}
 }
