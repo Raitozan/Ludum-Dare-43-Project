@@ -34,9 +34,10 @@ public class Player : MonoBehaviour
 	[HideInInspector] public int ability1;
 	[HideInInspector] public int ability2;
 
-	[Header("Dash Settings")]
 	[HideInInspector] public bool canDash;
 	[HideInInspector] public bool isDashing;
+
+	[Header("Dash Settings")]
 	public float dashmoveSpeed;
 	public float dashDuration;
 	public float dashAcceleration;
