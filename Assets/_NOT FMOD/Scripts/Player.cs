@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
 		abilities.Add(Burn);
 		abilities.Add(Climb);
 		abilities.Add(DoubleJump);
+		ability1 = -1;
+		ability2 = -1;
 	}
 	
 	// Update is called once per frame
@@ -70,9 +72,9 @@ public class Player : MonoBehaviour
 			velocity.y += gravity * Time.deltaTime;
 			controller.Move(velocity * Time.deltaTime);
 
-			if (Input.GetButtonDown("Ability1"))
+			if (Input.GetButtonDown("Ability1") && ability1 != -1)
 				abilities[ability1]();
-			if (Input.GetButtonDown("Ability2"))
+			if (Input.GetButtonDown("Ability2") && ability2 != -1)
 				abilities[ability2]();
 		}
 	}
