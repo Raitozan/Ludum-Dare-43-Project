@@ -38,8 +38,6 @@ public class Player : MonoBehaviour
 		abilities.Add(capa2);
 		abilities.Add(capa3);
 		abilities.Add(capa4);
-		ability1 = 0;
-		ability2 = 1;
 	}
 	
 	// Update is called once per frame
@@ -94,5 +92,10 @@ public class Player : MonoBehaviour
 	public void capa4()
 	{
 		Debug.Log("4");
+	}
+
+	public void changeAbility(int ind)
+	{
+		ability1 = ind;
 	}
 }
