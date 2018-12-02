@@ -17,7 +17,7 @@ public class Controller2D : MonoBehaviour
 	float horizontalRaySpacing;
 	float verticalRaySpacing;
 
-	BoxCollider2D boxCollider;
+	public BoxCollider2D boxCollider;
 	RaycastOrigins raycastOrigins;
 	public CollisionsInfo collisions;
 
@@ -192,7 +192,7 @@ public class Controller2D : MonoBehaviour
 		raycastOrigins.topRight = new Vector2(bounds.max.x, bounds.max.y);
 	}
 
-	void CalculateRaySpacing()
+	public void CalculateRaySpacing()
 	{
 		Bounds bounds = boxCollider.bounds;
 		bounds.Expand(skinWidth * -2);
