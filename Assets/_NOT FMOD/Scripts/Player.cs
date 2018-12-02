@@ -15,9 +15,6 @@ public class Player : MonoBehaviour
     private bool isMoving = false;
     bool isCrouching;
 
-  
-
-
 	float gravity;
 	float jumpVelocity;
 
@@ -29,6 +26,7 @@ public class Player : MonoBehaviour
 
     private FMOD.Studio.EventInstance robotMovementSFX;
     private FMOD.Studio.EventInstance crouchingSFX;
+
 	delegate void Ability();
 	List<Ability> abilities = new List<Ability>();
 	public int ability1;
@@ -90,28 +88,28 @@ public class Player : MonoBehaviour
 				abilities[ability1]();
 			if (Input.GetButtonDown("Ability2") && ability2 != -1)
 				abilities[ability2]();
-		}
-	}
 
 
-        if (targetVelocityX != 0 && (!Input.GetButtonDown("Jump"))) // checking if player moving, then executing MovementSFX
-        {
-            if (!isMoving)
+            if (targetVelocityX != 0 && (!Input.GetButtonDown("Jump"))) // checking if player moving, then executing MovementSFX
             {
-                MovementSFX();
-                isMoving = true;
+                if (!isMoving)
+                {
+                    MovementSFX();
+                    isMoving = true;
+                }
+            }
+
+            if (targetVelocityX == 0 || Input.GetButtonDown("Jump") || sfxVelocity != 0)
+            {
+                MovementSFXStop();
+                isMoving = false;
             }
         }
+	}
 
-        if (targetVelocityX == 0 || Input.GetButtonDown("Jump") || sfxVelocity != 0)
-        {
-            MovementSFXStop();
-            isMoving = false;
-        }
+    #region Abilities
 
-    }
-
-	public void Dash()
+    public void Dash()
 	{
 		Debug.Log("Dash");
 	}
@@ -135,6 +133,8 @@ public class Player : MonoBehaviour
 	{
 		ability1 = ind;
 	}
+
+    # endregion
 
     #region SFX methods
 
