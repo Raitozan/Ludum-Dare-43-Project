@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     Controller2D controller;
 
     private FMOD.Studio.EventInstance robotMovementSFX;
+    private FMOD.Studio.EventInstance crouchingSFX;
 
     void Start ()
 	{
@@ -58,11 +59,13 @@ public class Player : MonoBehaviour
 		{
 			isCrouching = true;
 			controller.Crouch();
-		}
+            StartCrouchingSFX();
+        }
 		if (!Input.GetButton("Crouch") && isCrouching)
 		{
 			controller.Uncrouch(ref isCrouching);
-		}
+            StopCrouchingSFX();
+        }
 
 		float targetVelocityX = input.x * moveSpeed;
 		if (isCrouching)
@@ -102,6 +105,18 @@ public class Player : MonoBehaviour
     {
         robotMovementSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //stopping movement sound when jumping
         robotMovementSFX.release();
+    }
+
+    void StartCrouchingSFX()
+    {
+        crouchingSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.CROUCH);
+        crouchingSFX.start();
+    }
+
+    void StopCrouchingSFX()
+    {
+        crouchingSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        crouchingSFX.release();
     }
 
     #endregion
