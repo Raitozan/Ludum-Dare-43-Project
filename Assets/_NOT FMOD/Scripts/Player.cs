@@ -94,9 +94,9 @@ public class Player : MonoBehaviour
 			velocity.y += gravity * Time.deltaTime;
 			controller.Move(velocity * Time.deltaTime);
 
-			if (Input.GetButtonDown("Ability1") && ability1 != -1)
+			if (Input.GetButtonDown("Ability1") && ability1 != -1 && !isCrouching)
 				abilities[ability1]();
-			if (Input.GetButtonDown("Ability2") && ability2 != -1)
+			if (Input.GetButtonDown("Ability2") && ability2 != -1 && !isCrouching)
 				abilities[ability2]();
 
 			if (controller.collisions.below)
@@ -128,15 +128,19 @@ public class Player : MonoBehaviour
 	}
 	IEnumerator dashCoroutine()
 	{
+		float normalGravity = gravity;
+
 		canDash = false;
 		moveSpeed += dashmoveSpeed;
 		accelerationTimeAirborne -= dashAcceleration;
 		accelerationTimeGrounded -= dashAcceleration;
+		gravity = 0;
 		isDashing = true;
 		yield return new WaitForSeconds(dashDuration);
 		moveSpeed -= dashmoveSpeed;
 		accelerationTimeAirborne += dashAcceleration;
 		accelerationTimeGrounded += dashAcceleration;
+		gravity = normalGravity;
 		isDashing = false;
 	}
 
