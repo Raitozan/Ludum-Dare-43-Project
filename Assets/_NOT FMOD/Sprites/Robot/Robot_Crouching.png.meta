@@ -118,7 +118,7 @@ TextureImporter:
         width: 764
         height: 1058
       alignment: 9
-      pivot: {x: 0.36957625, y: 0.503554}
+      pivot: {x: 0.34250745, y: 0.656377}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,7 +138,7 @@ TextureImporter:
         width: 684
         height: 1045
       alignment: 9
-      pivot: {x: 0.31034413, y: 0.49460268}
+      pivot: {x: 0.26361817, y: 0.64033115}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Robot_Crouching_2
       rect:
         serializedVersion: 2
-        x: 1662
-        y: 15
+        x: 1670
+        y: 17
         width: 765
         height: 1036
       alignment: 9
-      pivot: {x: 0.38695043, y: 0.49637058}
+      pivot: {x: 0.34025687, y: 0.6342912}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,7 +178,7 @@ TextureImporter:
         width: 678
         height: 1058
       alignment: 9
-      pivot: {x: 0.31698492, y: 0.496446}
+      pivot: {x: 0.25598252, y: 0.629722}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
