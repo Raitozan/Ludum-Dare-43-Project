@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
 				velocity.y = jumpVelocity;
 				canDoubleJump = true;
 				isJumping = true;
-				FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_JUMP, GetComponent<Transform>().position);  // jump sound      
+			//	FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_JUMP, GetComponent<Transform>().position);  // jump sound      
 			}
 
 			sfxVelocity = velocity.y;
@@ -116,22 +116,22 @@ public class Player : MonoBehaviour
 				canDoubleJump = false;
 				isJumping = false;
 			}
-
+          
             if (targetVelocityX != 0 && (!Input.GetButtonDown("Jump"))) // checking if player moving, then executing MovementSFX
             {
                 if (!isMoving)
                 {
-                    MovementSFX();
+                 //   MovementSFX();
                     isMoving = true;
 				}
             }
 
             if (targetVelocityX == 0 || Input.GetButtonDown("Jump") || sfxVelocity != 0)
             {
-                MovementSFXStop();
+             //   MovementSFXStop();
                 isMoving = false;
             }
-
+        
 			if (targetVelocityX > 0)
 				isRight = true;
 			else if (targetVelocityX < 0)
@@ -144,9 +144,13 @@ public class Player : MonoBehaviour
 
     public void Dash()
 	{
-		if(canDash)
-			StartCoroutine(dashCoroutine());
-	}
+        if (canDash)
+        {
+            StartCoroutine(dashCoroutine());
+            FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_DASH, GetComponent<Transform>().position);
+        }
+     }
+
 	IEnumerator dashCoroutine()
 	{
 		float normalGravity = gravity;
@@ -162,7 +166,7 @@ public class Player : MonoBehaviour
 		accelerationTimeAirborne += dashAcceleration;
 		accelerationTimeGrounded += dashAcceleration;
 		gravity = normalGravity;
-		isDashing = false;
+        isDashing = false;
 	}
 
 	public void Burn()
@@ -171,7 +175,8 @@ public class Player : MonoBehaviour
 		Burning b = Instantiate(burningPrefab, new Vector3(transform.position.x + xPos, transform.position.y+0.2f, transform.position.z), Quaternion.identity, transform).GetComponent<Burning>();
 		b.player = this;
 		isBurning = true;
-	}
+        BurnSFX();
+    }
 
 	public void Climb()
 	{
@@ -190,7 +195,8 @@ public class Player : MonoBehaviour
 		if (canDoubleJump)
 		{
 			velocity.y = jumpVelocity;
-			canDoubleJump = false;
+            DoubleJumpSFX();
+            canDoubleJump = false;
 		}
 	}
 
@@ -203,17 +209,25 @@ public class Player : MonoBehaviour
 
     #region SFX methods
 
-    void MovementSFX() // starts movement Loop
+
+    public void RunSFX()
     {
-        robotMovementSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.ROBOT_MOVE);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(robotMovementSFX, this.transform, GetComponent<Rigidbody>());
-        robotMovementSFX.start();
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_MOVE, GetComponent<Transform>().position);
     }
 
-    void MovementSFXStop()
+    public void JumpSFX()
     {
-        robotMovementSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //stopping movement sound when jumping
-        robotMovementSFX.release();
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_JUMP, GetComponent<Transform>().position);
+    }
+
+    public void BurnSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_BURN, GetComponent<Transform>().position);
+    }
+
+    public void DoubleJumpSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_DJ, GetComponent<Transform>().position);
     }
 
     void StartCrouchingSFX()
