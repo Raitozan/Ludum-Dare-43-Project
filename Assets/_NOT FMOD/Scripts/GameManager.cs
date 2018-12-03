@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour {
 	public float LevelTimer;
 
 	public float[] LevelTime = {60, 60, 60};
-	
+
+	public int startAbility1 = -1;
+	public int startAbility2 = -1;
 	public int playerAbility1 = -1;
 	public int playerAbility2 = -1;
 	public int playerEnergy;

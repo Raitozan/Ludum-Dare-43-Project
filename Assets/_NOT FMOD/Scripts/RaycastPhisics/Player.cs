@@ -58,8 +58,8 @@ public class Player : MonoBehaviour
 
 	void Start ()
 	{
-		ability1 = GameManager.instance.playerAbility1;
-		ability2 = GameManager.instance.playerAbility2;
+		ability1 = GameManager.instance.startAbility1;
+		ability2 = GameManager.instance.startAbility2;
 
 		controller = GetComponent<Controller2D>();
 
