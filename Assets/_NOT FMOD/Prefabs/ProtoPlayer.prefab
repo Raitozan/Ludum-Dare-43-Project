@@ -119,6 +119,7 @@ MonoBehaviour:
   climbDuration: 2
   canDoubleJump: 0
   animator: {fileID: 95375396597391042}
+  energy: 100
 --- !u!114 &114440361141018688
 MonoBehaviour:
   m_ObjectHideFlags: 1

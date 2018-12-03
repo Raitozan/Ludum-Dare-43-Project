@@ -567,7 +567,7 @@ Transform:
   - {fileID: 1087864338}
   - {fileID: 1251140577}
   m_Father: {fileID: 1665995034}
-  m_RootOrder: 20
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &221456353
 Animator:
@@ -4344,13 +4344,13 @@ Transform:
   - {fileID: 839727411}
   - {fileID: 858645791}
   - {fileID: 921571735}
+  - {fileID: 1968338697}
+  - {fileID: 221456352}
   - {fileID: 175353872}
   - {fileID: 894465398}
   - {fileID: 2010747424}
   - {fileID: 2045087420}
   - {fileID: 1430538898}
-  - {fileID: 1968338697}
-  - {fileID: 221456352}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4878,7 +4878,7 @@ Transform:
   - {fileID: 1967731798}
   - {fileID: 1534948258}
   m_Father: {fileID: 1665995034}
-  m_RootOrder: 19
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2010747424 stripped
 Transform:
@@ -5050,6 +5050,11 @@ Prefab:
         type: 2}
       propertyPath: ability2
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114198656966679712, guid: 4d577c17c57ed504ea9be1da03c04394,
+        type: 2}
+      propertyPath: energy
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d577c17c57ed504ea9be1da03c04394, type: 2}

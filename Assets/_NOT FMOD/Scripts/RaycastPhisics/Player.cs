@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
@@ -53,6 +54,8 @@ public class Player : MonoBehaviour
 	public bool canDoubleJump;
 	public Animator animator;
 
+	public int energy;
+
 	void Start ()
 	{
 		controller = GetComponent<Controller2D>();
@@ -102,6 +105,8 @@ public class Player : MonoBehaviour
 				abilities[ability1]();
 			if (Input.GetButtonDown("Ability2") && ability2 != -1 && !isCrouching)
 				abilities[ability2]();
+			if (energy <= 0)
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
 			float targetVelocityX = input.x * moveSpeed;
 			if (isCrouching)
@@ -160,6 +165,7 @@ public class Player : MonoBehaviour
 		accelerationTimeAirborne -= dashAcceleration;
 		accelerationTimeGrounded -= dashAcceleration;
 		gravity = 0;
+		energy -= 5;
 		isDashing = true;
 		yield return new WaitForSeconds(dashDuration);
 		moveSpeed -= dashmoveSpeed;
@@ -174,6 +180,7 @@ public class Player : MonoBehaviour
 		float xPos = (isRight) ? 0.75f : -0.75f;
 		Burning b = Instantiate(burningPrefab, new Vector3(transform.position.x + xPos, transform.position.y+0.2f, transform.position.z), Quaternion.identity, transform).GetComponent<Burning>();
 		b.player = this;
+		energy -= 10;
 		isBurning = true;
         BurnSFX();
     }
@@ -186,6 +193,7 @@ public class Player : MonoBehaviour
 	{
 		float normalAngle = controller.maxClimbAngle;
 		controller.maxClimbAngle = 90;
+		energy -= 15;
 		yield return new WaitForSeconds(climbDuration);
 		controller.maxClimbAngle = normalAngle;
 	}
@@ -195,6 +203,7 @@ public class Player : MonoBehaviour
 		if (canDoubleJump)
 		{
 			velocity.y = jumpVelocity;
+			energy -= 5;
             DoubleJumpSFX();
             canDoubleJump = false;
 		}
