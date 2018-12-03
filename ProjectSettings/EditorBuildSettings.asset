@@ -17,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_NOT FMOD/Scenes/thirdlevelgood.unity
     guid: 0d4266d656766884c8231ee79f079182
-  - enabled: 1
-    path: Assets/_NOT FMOD/Scenes/GUI.unity
-    guid: 15058c7816ddb9646a5c6802e28d63f3
   m_configObjects: {}

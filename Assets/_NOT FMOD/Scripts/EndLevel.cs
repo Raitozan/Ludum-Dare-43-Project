@@ -7,7 +7,6 @@ public class EndLevel : MonoBehaviour {
 	{
 		if (collision.CompareTag("Player"))
 		{
-			Debug.Log("Hello");
 			GameManager.instance.actualLvl++;
 			GameManager.instance.startAbility1 = GameManager.instance.playerAbility1;
 			GameManager.instance.startAbility2 = GameManager.instance.playerAbility2;
