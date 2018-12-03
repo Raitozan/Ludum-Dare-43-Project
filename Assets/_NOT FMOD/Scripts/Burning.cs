@@ -18,6 +18,7 @@ public class Burning : MonoBehaviour {
 		if(collision.CompareTag("Flammable"))
 		{
 			Destroy(collision.gameObject);
+			Destroy(GetComponent<CircleCollider2D>());
 		}
 	}
 }

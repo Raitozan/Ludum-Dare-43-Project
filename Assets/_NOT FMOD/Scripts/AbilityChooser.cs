@@ -20,14 +20,14 @@ public class AbilityChooser : MonoBehaviour
 	{
 		if (waitingForInput)
 		{
-			if (Input.GetButton("Ability1"))
+			if (Input.GetButtonDown("Ability1"))
 			{
 				player.ability1 = abilityId;
 				Time.timeScale = 1;
 				GameManager.instance.gamePaused = false;
 				Destroy(gameObject);
 			}
-			if (Input.GetButton("Ability2"))
+			if (Input.GetButtonDown("Ability2"))
 			{
 				player.ability2 = abilityId;
 				Time.timeScale = 1;

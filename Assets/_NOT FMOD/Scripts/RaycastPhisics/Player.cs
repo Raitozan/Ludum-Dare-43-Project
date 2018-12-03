@@ -31,8 +31,8 @@ public class Player : MonoBehaviour
 	delegate void Ability();
 	List<Ability> abilities = new List<Ability>();
 
-	[HideInInspector] public int ability1;
-	[HideInInspector] public int ability2;
+	public int ability1 = -1;
+	public int ability2 = -1;
 
 	//DASH
 	[HideInInspector] public bool canDash;
@@ -41,11 +41,10 @@ public class Player : MonoBehaviour
 	public float dashmoveSpeed;
 	public float dashDuration;
 	public float dashAcceleration;
-	[HideInInspector]
-	public bool isRight = true;
+	[HideInInspector] public bool isRight = true;
 	public GameObject burningPrefab;
 	public float climbDuration;
-	public bool canDoubleJump;
+    [HideInInspector] public bool canDoubleJump;
 
 	void Start ()
 	{
@@ -58,8 +57,6 @@ public class Player : MonoBehaviour
 		abilities.Add(Burn);
 		abilities.Add(Climb);
 		abilities.Add(DoubleJump);
-		ability1 = -1;
-		ability2 = -1;
 	}
 	
 	// Update is called once per frame
