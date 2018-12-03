@@ -10,6 +10,7 @@ public class AbilityChooser : MonoBehaviour
 	public Canvas canvas;
 	public Image capacity1, capacity2;
 
+	[HideInInspector]
 	public Player player;
 
 	public bool waitingForInput = false;
@@ -25,6 +26,7 @@ public class AbilityChooser : MonoBehaviour
 				player.ability1 = abilityId;
 				Time.timeScale = 1;
 				GameManager.instance.gamePaused = false;
+				player.velocity = Vector3.zero;
 				Destroy(gameObject);
 			}
 			if (Input.GetButtonDown("Ability2"))

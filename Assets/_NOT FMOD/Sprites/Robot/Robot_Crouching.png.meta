@@ -1,7 +1,11 @@
 fileFormatVersion: 2
-guid: 5b2be7b994fd8424389167408eb598d2
+guid: 32c23ff145de7a14884acf218a554953
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Robot_Crouching_0
+    21300002: Robot_Crouching_1
+    21300004: Robot_Crouching_2
+    21300006: Robot_Crouching_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,12 +44,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 2454
+  spritePixelsToUnits: 1440
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,11 +108,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Robot_Crouching_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 764
+        height: 1058
+      alignment: 9
+      pivot: {x: 0.34250745, y: 0.656377}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb73791b7ef45c4593ff328c173261b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Crouching_1
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 9
+        width: 684
+        height: 1045
+      alignment: 9
+      pivot: {x: 0.26361817, y: 0.64033115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee1ae86a1323444eb78ea7d95a9f526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Crouching_2
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 17
+        width: 765
+        height: 1036
+      alignment: 9
+      pivot: {x: 0.34025687, y: 0.6342912}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd939874d93930f4191a2fbffc1021c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Crouching_3
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 0
+        width: 678
+        height: 1058
+      alignment: 9
+      pivot: {x: 0.25598252, y: 0.629722}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a26880efc4dfe4a81c4eb08f6f1075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 60ba76fcb0e7b994ebe9278a6563143a
+    spriteID: 54e6d9f84541b8e44a2ccfec038d6175
     vertices: []
     indices: 
     edges: []

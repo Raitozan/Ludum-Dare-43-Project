@@ -1,7 +1,11 @@
 fileFormatVersion: 2
-guid: 5b2be7b994fd8424389167408eb598d2
+guid: e2eb8dc7f77255d49ad6955dfae399cc
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Robot_Jump_0
+    21300002: Robot_Jump_1
+    21300004: Robot_Jump_2
+    21300006: Robot_Jump_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,12 +44,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 2454
+  spritePixelsToUnits: 1440
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,11 +108,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Robot_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 472
+        width: 470
+        height: 1396
+      alignment: 9
+      pivot: {x: 0.5762211, y: 0.50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444a51b1b7f3ae540a1ce675dff52711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 437
+        width: 826
+        height: 1419
+      alignment: 9
+      pivot: {x: 0.33271417, y: 0.50540996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1833cca165c0f3446b6d5bb8ba6c8d58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 472
+        width: 606
+        height: 1527
+      alignment: 9
+      pivot: {x: 0.45355245, y: 0.4698369}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72c283a2d2e3c54ebdb3b482f5fb724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Jump_3
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 478
+        width: 804
+        height: 1403
+      alignment: 9
+      pivot: {x: 0.34086737, y: 0.49817625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a7fe3e502f1a2409971108df9072e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 60ba76fcb0e7b994ebe9278a6563143a
+    spriteID: 3ac6accb8496f3c45b723b04ec95684b
     vertices: []
     indices: 
     edges: []

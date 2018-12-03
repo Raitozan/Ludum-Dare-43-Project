@@ -15,11 +15,12 @@ public class Player : MonoBehaviour
 
 	bool isMoving = false;
 	bool isCrouching;
+	bool isJumping;
 
 	float gravity;
 	float jumpVelocity;
 
-	Vector3 velocity;
+	public Vector3 velocity;
 	float velocityXSmoothing;
 	float sfxVelocity = 0f;
 
@@ -34,17 +35,24 @@ public class Player : MonoBehaviour
 	public int ability1 = -1;
 	public int ability2 = -1;
 
-	//DASH
-	[HideInInspector] public bool canDash;
-	[HideInInspector] public bool isDashing;
 	[Header("Abilities")]
 	public float dashmoveSpeed;
 	public float dashDuration;
 	public float dashAcceleration;
-	[HideInInspector] public bool isRight = true;
+	[HideInInspector]
+	public bool canDash;
+	[HideInInspector]
+	public bool isDashing;
+	[HideInInspector]
+	public bool isRight = true;
 	public GameObject burningPrefab;
+	[HideInInspector]
+	public bool isBurning;
 	public float climbDuration;
-    [HideInInspector] public bool canDoubleJump;
+	[HideInInspector]
+	public bool canDoubleJump;
+	[HideInInspector]
+	public Animator animator;
 
 	void Start ()
 	{
@@ -73,6 +81,7 @@ public class Player : MonoBehaviour
 			{
 				velocity.y = jumpVelocity;
 				canDoubleJump = true;
+				isJumping = true;
 				FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_JUMP, GetComponent<Transform>().position);  // jump sound      
 			}
 
@@ -106,6 +115,7 @@ public class Player : MonoBehaviour
 			{
 				canDash = true;
 				canDoubleJump = false;
+				isJumping = false;
 			}
 
             if (targetVelocityX != 0 && (!Input.GetButtonDown("Jump"))) // checking if player moving, then executing MovementSFX
@@ -114,10 +124,6 @@ public class Player : MonoBehaviour
                 {
                     MovementSFX();
                     isMoving = true;
-					if (targetVelocityX > 0)
-						isRight = true;
-					else if (targetVelocityX < 0)
-						isRight = false;
 				}
             }
 
@@ -126,6 +132,12 @@ public class Player : MonoBehaviour
                 MovementSFXStop();
                 isMoving = false;
             }
+
+			if (targetVelocityX > 0)
+				isRight = true;
+			else if (targetVelocityX < 0)
+				isRight = false;
+			UpdateAnimationParameters();
         }
 	}
 
@@ -156,8 +168,10 @@ public class Player : MonoBehaviour
 
 	public void Burn()
 	{
-		float xPos = (isRight) ? 1 : -1;
-		Instantiate(burningPrefab, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z), Quaternion.identity, transform);
+		float xPos = (isRight) ? 0.75f : -0.75f;
+		Burning b = Instantiate(burningPrefab, new Vector3(transform.position.x + xPos, transform.position.y+0.2f, transform.position.z), Quaternion.identity, transform).GetComponent<Burning>();
+		b.player = this;
+		isBurning = true;
 	}
 
 	public void Climb()
@@ -215,8 +229,23 @@ public class Player : MonoBehaviour
         crouchingSFX.release();
     }
 
-    #endregion
+	#endregion
 
+	#region animations
 
+	void UpdateAnimationParameters()
+	{
+		animator.SetBool("isMoving", isMoving);
+		animator.SetBool("isCrouching", isCrouching);
+		animator.SetBool("isJumping", isJumping);
+		animator.SetBool("isBurning", isBurning);
+		animator.SetBool("isDashing", isDashing);
+		if (isRight)
+			GetComponent<SpriteRenderer>().flipX = false;
+		else
+			GetComponent<SpriteRenderer>().flipX = true;
+	}
+
+	#endregion
 
 }
