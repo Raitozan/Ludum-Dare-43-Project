@@ -599,11 +599,8 @@ MonoBehaviour:
   - 60
   - 60
   - 60
-  startAbility1: -1
-  startAbility2: -1
   playerAbility1: -1
   playerAbility2: -1
-  playerEnergy: 0
   gamePaused: 0
 --- !u!4 &157027467
 Transform:
@@ -1230,15 +1227,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4136829075833782, guid: 025994720a39a22438f8486ab7fd9105, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.8
+      value: -11.044121
       objectReference: {fileID: 0}
     - target: {fileID: 4136829075833782, guid: 025994720a39a22438f8486ab7fd9105, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1773653
       objectReference: {fileID: 0}
     - target: {fileID: 4136829075833782, guid: 025994720a39a22438f8486ab7fd9105, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -6.4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4136829075833782, guid: 025994720a39a22438f8486ab7fd9105, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6253,7 +6250,6 @@ Transform:
 --- !u!1 &1685644232
 GameObject:
   m_ObjectHideFlags: 0
-
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
