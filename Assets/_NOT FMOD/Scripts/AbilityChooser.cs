@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AbilityChooser : MonoBehaviour
 {
-	public Sprite dash, burn, climb, doubleJump;
+	public Sprite empty, dash, burn, climb, doubleJump;
 
 	public Canvas canvas;
 	public Image capacity1, capacity2;
@@ -49,8 +49,7 @@ public class AbilityChooser : MonoBehaviour
 			switch (player.ability1)
 			{
 				case -1:
-					capacity1.sprite = null;
-					capacity1.color = new Color(1, 1, 1, 0);
+					capacity1.sprite = empty;
 					break;
 				case 0:
 					capacity1.sprite = dash;

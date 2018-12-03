@@ -12,9 +12,12 @@ public class GameManager : MonoBehaviour {
 	public float LevelTimer;
 
 	public float[] LevelTime = {60, 60, 60};
-	
+
+	public int startAbility1 = -1;
+	public int startAbility2 = -1;
 	public int playerAbility1 = -1;
 	public int playerAbility2 = -1;
+	public int playerEnergy;
 
 	public bool gamePaused = false;
 
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour {
 
 	public void ResetLvl()
 	{
+		playerEnergy = 100;
 		LevelTimer = LevelTime[actualLvl - 1];
 		SceneManager.LoadScene(actualLvl);
 	}

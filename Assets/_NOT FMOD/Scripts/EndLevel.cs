@@ -9,6 +9,8 @@ public class EndLevel : MonoBehaviour {
 		{
 			Debug.Log("Hello");
 			GameManager.instance.actualLvl++;
+			GameManager.instance.startAbility1 = GameManager.instance.playerAbility1;
+			GameManager.instance.startAbility2 = GameManager.instance.playerAbility2;
 			GameManager.instance.ResetLvl();
 		}
 	}
