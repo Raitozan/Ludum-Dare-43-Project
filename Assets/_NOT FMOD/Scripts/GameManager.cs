@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
 		LevelTimer -= Time.deltaTime;
 		if (LevelTimer <= 0)
 			ResetLvl();
+    //    AudioManager.instance.SetMusicParameter(AudioManager.instance.musicInstance, FMODPaths.BATTERY_LEVEL, playerEnergy); // enable it later when AudioManager is in Main_Menu, otherwise errors because it can't find AudioManger
 	}
 
 	public void ResetLvl()
