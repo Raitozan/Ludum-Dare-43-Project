@@ -831,8 +831,11 @@ MonoBehaviour:
   - 60
   - 60
   - 60
+  startAbility1: -1
+  startAbility2: -1
   playerAbility1: 1
   playerAbility2: 3
+  playerEnergy: 0
   gamePaused: 0
 --- !u!4 &544175151
 Transform:
@@ -1292,7 +1295,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4911324684783202, guid: 4d577c17c57ed504ea9be1da03c04394, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.53
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4911324684783202, guid: 4d577c17c57ed504ea9be1da03c04394, type: 2}
       propertyPath: m_LocalPosition.y
