@@ -64,6 +64,13 @@ public class AudioManager : MonoBehaviour {
             SetMusicParameter(musicInstance, FMODPaths.LEVEL_NUMBER, 2);
             SetAmbienceParameter(ambienceInstance, FMODPaths.LEVEL_NUMBER, 2);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            SetMusicParameter(musicInstance, FMODPaths.BEAT, 1);
+            SetMusicParameter(musicInstance, FMODPaths.BASS, 1);
+
+        }
     }
 
     public void PlayAmbience()
@@ -105,7 +112,7 @@ public class AudioManager : MonoBehaviour {
     public void SetAmbienceParameter(FMOD.Studio.EventInstance ambienceInstance, string name, int value)
     {
         FMOD.Studio.ParameterInstance ambienceParameter;
-        musicInstance.getParameter(name, out ambienceParameter);
+        ambienceInstance.getParameter(name, out ambienceParameter);
 
         ambienceParameter.setValue(value);
     }
