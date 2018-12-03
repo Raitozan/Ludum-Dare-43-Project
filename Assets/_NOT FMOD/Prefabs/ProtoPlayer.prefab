@@ -105,8 +105,8 @@ MonoBehaviour:
   moveSpeed: 5
   crouchModificator: 0.5
   velocity: {x: 0, y: 0, z: 0}
-  ability1: 0
-  ability2: 0
+  ability1: -1
+  ability2: -1
   dashmoveSpeed: 40
   dashDuration: 0.05
   dashAcceleration: 0.09

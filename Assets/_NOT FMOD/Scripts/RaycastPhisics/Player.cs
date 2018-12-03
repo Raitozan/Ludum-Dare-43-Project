@@ -51,7 +51,6 @@ public class Player : MonoBehaviour
 	public float climbDuration;
 	[HideInInspector]
 	public bool canDoubleJump;
-	[HideInInspector]
 	public Animator animator;
 
 	void Start ()
