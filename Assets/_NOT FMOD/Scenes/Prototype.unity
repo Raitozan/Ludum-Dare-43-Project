@@ -1053,6 +1053,12 @@ Prefab:
       propertyPath: climbDuration
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 212545556379007836, guid: 4d577c17c57ed504ea9be1da03c04394,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 226ccc52c4544874fa6120a6e6e163a8,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d577c17c57ed504ea9be1da03c04394, type: 2}
   m_IsPrefabAsset: 0
@@ -1542,6 +1548,29 @@ Transform:
   m_Father: {fileID: 1090452410}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1606588532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1835252997452530, guid: 4d577c17c57ed504ea9be1da03c04394,
+    type: 2}
+  m_PrefabInternal: {fileID: 1213021561}
+--- !u!95 &1606588533
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1606588532}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 02eddfa36b2bd6243b4b2d723c682f15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1619501138
 GameObject:
   m_ObjectHideFlags: 0
