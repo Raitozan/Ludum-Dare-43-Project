@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_NOT FMOD/Scenes/secondLevel_test.unity
     guid: afec722cc51769849a2514334d03d7e7
+  - enabled: 1
+    path: Assets/_NOT FMOD/Scenes/thirdlevelgood.unity
+    guid: 0d4266d656766884c8231ee79f079182
   m_configObjects: {}
