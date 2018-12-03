@@ -12,9 +12,15 @@ public class AbilityGiver : MonoBehaviour {
 		if (collision.CompareTag("Player"))
 		{
 			if(abilityToChange == 1)
+			{
 				collision.gameObject.GetComponent<Player>().ability1 = abilityId;
+				GameManager.instance.playerAbility1 = abilityId;
+			}
 			else
+			{
 				collision.gameObject.GetComponent<Player>().ability2 = abilityId;
+				GameManager.instance.playerAbility2 = abilityId;
+			}
 			Destroy(gameObject);
 		}
 	}

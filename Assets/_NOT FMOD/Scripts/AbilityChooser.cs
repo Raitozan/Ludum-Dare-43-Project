@@ -24,6 +24,7 @@ public class AbilityChooser : MonoBehaviour
 			if (Input.GetButtonDown("Ability1"))
 			{
 				player.ability1 = abilityId;
+				GameManager.instance.playerAbility1 = abilityId;
 				Time.timeScale = 1;
 				GameManager.instance.gamePaused = false;
 				player.velocity = Vector3.zero;
@@ -32,6 +33,7 @@ public class AbilityChooser : MonoBehaviour
 			if (Input.GetButtonDown("Ability2"))
 			{
 				player.ability2 = abilityId;
+				GameManager.instance.playerAbility2 = abilityId;
 				Time.timeScale = 1;
 				GameManager.instance.gamePaused = false;
 				Destroy(gameObject);

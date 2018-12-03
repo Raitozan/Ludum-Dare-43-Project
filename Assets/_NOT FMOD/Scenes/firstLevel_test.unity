@@ -439,6 +439,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28069863eba685549afc227e186f10fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualLvl: 1
+  LevelTimer: 0
+  LevelTime:
+  - 60
+  - 60
+  - 60
+  playerAbility1: -1
+  playerAbility2: -1
   gamePaused: 0
 --- !u!4 &157027467
 Transform:
@@ -540,7 +548,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 221456352}
-  - component: {fileID: 221456353}
   m_Layer: 9
   m_Name: ConveyorBelt
   m_TagString: Untagged
@@ -569,24 +576,6 @@ Transform:
   m_Father: {fileID: 1665995034}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &221456353
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 221456351}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0cadd9250d3e04d41822c83c8245ce44, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &229893112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4029252032083612, guid: cbf3452b8add2ae4d9a3a55b2a9e1e9e,

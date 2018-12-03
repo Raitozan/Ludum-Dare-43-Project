@@ -35,8 +35,6 @@ public class Player : MonoBehaviour
 	List<Ability> abilities = new List<Ability>();
 
 	[Header("Abilities")]
-	public int ability1 = -1;
-	public int ability2 = -1;
 	public float dashmoveSpeed;
 	public float dashDuration;
 	public float dashAcceleration;
@@ -52,12 +50,19 @@ public class Player : MonoBehaviour
 	public float climbDuration;
 	[HideInInspector]
 	public bool canDoubleJump;
+	[HideInInspector]
+	public int ability1;
+	[HideInInspector]
+	public int ability2;
 	public Animator animator;
 
 	public int energy;
 
 	void Start ()
 	{
+		ability1 = GameManager.instance.playerAbility1;
+		ability2 = GameManager.instance.playerAbility2;
+
 		controller = GetComponent<Controller2D>();
 
 		gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
@@ -191,11 +196,10 @@ public class Player : MonoBehaviour
 	}
 	IEnumerator climbCoroutine()
 	{
-		float normalAngle = controller.maxClimbAngle;
 		controller.maxClimbAngle = 90;
 		energy -= 15;
 		yield return new WaitForSeconds(climbDuration);
-		controller.maxClimbAngle = normalAngle;
+		controller.maxClimbAngle = 80;
 	}
 
 	public void DoubleJump()
