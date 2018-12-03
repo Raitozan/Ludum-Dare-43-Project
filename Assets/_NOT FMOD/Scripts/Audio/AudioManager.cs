@@ -10,23 +10,27 @@ public class AudioManager : MonoBehaviour {
     public FMOD.Studio.EventInstance ambienceInstance;
     public FMOD.Studio.EventInstance musicInstance;
 
-    private void Awake()
-
+    void Awake()
     {
         if (instance == null)
+        {
             instance = this;
-        else
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
             Destroy(this.gameObject);
+            return;
 
-
-        DontDestroyOnLoad(this.gameObject);
+        }
     }
 
     // Use this for initialization
     void Start () {
         ambienceInstance = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.AMBIENCE);
         musicInstance = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.MUSIC);
-
+        PlayMusic();
+        PlayAmbience();
     }
 	
 	// Update is called once per frame

@@ -14,10 +14,10 @@
 {56467f07-b54a-4872-b14a-ae6355c7c38b} event:/music
 {9b84eabf-c73a-401a-900a-cd8dcedb5527} event:/test
 {1395044b-298a-4c40-b2ee-d61f31864d0e} bus:/
-{063e336a-fab3-4bfb-a674-c64be14dbf41} bus:/Robot
-{f49c9bad-d522-4c6a-8501-ee0e87f77c5c} bus:/Robot/Movement
 {48dffea2-ea1d-4ba2-912e-16798492431c} bus:/Ambience
 {2d9b0878-5166-470c-866d-ca262eecbfcb} bus:/Music
+{063e336a-fab3-4bfb-a674-c64be14dbf41} bus:/Robot
+{f49c9bad-d522-4c6a-8501-ee0e87f77c5c} bus:/Robot/Movement
 {f6937add-cfef-4685-a70d-e8d9e5d5fe53} bus:/Reverb
 {712232c3-4c65-4806-96e9-263f7a158e06} snapshot:/crouching
 {f24f6887-c1c4-48ef-8936-4aaf14d58092} bank:/Master Bank
