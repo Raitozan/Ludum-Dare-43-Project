@@ -26,13 +26,41 @@ public class AudioManager : MonoBehaviour {
     void Start () {
         ambienceInstance = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.AMBIENCE);
         musicInstance = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.MUSIC);
-     //   PlayAmbience();
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            PlayMusic();
+            PlayAmbience();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            StopMusic();
+            StopAmbience();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SetMusicParameter(musicInstance, FMODPaths.PIANO_CHORDS, 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SetMusicParameter(musicInstance, FMODPaths.VIOLIN, 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SetMusicParameter(musicInstance, FMODPaths.LEVEL_NUMBER, 2);
+            SetAmbienceParameter(ambienceInstance, FMODPaths.LEVEL_NUMBER, 2);
+        }
+    }
 
     public void PlayAmbience()
     {
@@ -87,6 +115,21 @@ public class AudioManager : MonoBehaviour {
         musicParameter.setValue(value);
     }
 
+    /*
+    AudioManager.SetMusicParameter(audioManager.musicInstance, FMODPaths.LEVEL_NUMBER, 1);
+       AudioManager.SetMusicParameter(audioManager.musicInstance, FMODPaths.LEVEL_NUMBER, 2);
+
+      AudioManager.SetAmbienceParameter(audioManager.ambienceInstance, FMODPaths.LEVEL_NUMBER, 1);
+        AudioManager.SetAmbienceParameter(audioManager.ambienceInstance, FMODPaths.LEVEL_NUMBER, 2);
+
+           AudioManager.SetMusicParameter(audioManager.musicInstance, FMODPaths.VIOLIN, 1);
+           AudioManager.SetMusicParameter(audioManager.musicInstance, FMODPaths.PIANO_CHORDS, 1);
+
+     AudioManager.SetMusicParameter(audioManager.musicInstance, FMODPaths.BATTERY_LEVEL, VARIABLE);
+
+
+
+       */
 
 
 

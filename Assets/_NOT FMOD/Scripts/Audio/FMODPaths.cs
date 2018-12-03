@@ -20,7 +20,13 @@
 
     // PARAMETERS
 
-    public static readonly string LEVEL = "Level";
+    public static readonly string LEVEL_NUMBER = "Level";
+    public static readonly string BATTERY_LEVEL = "Battery";
+    public static readonly string VIOLIN = "Violin";
+    public static readonly string PIANO_CHORDS = "PianoChords";
+
+
+
 
     // SNAPSHOTS
 
