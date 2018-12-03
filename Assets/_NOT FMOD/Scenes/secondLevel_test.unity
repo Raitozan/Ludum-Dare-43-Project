@@ -447,11 +447,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 122.642
+      value: 126.638
       objectReference: {fileID: 0}
     - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.94
+      value: -10.328
       objectReference: {fileID: 0}
     - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
       propertyPath: m_LocalPosition.z
@@ -475,7 +475,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
@@ -1140,7 +1140,7 @@ Transform:
   m_LocalScale: {x: 3.3539827, y: 0.31773496, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &994623178
 GameObject:
@@ -1861,8 +1861,8 @@ MonoBehaviour:
   - 60
   - 60
   - 60
-  startAbility1: -1
-  startAbility2: -1
+  startAbility1: 0
+  startAbility2: 1
   playerAbility1: 0
   playerAbility2: 1
   playerEnergy: 0
@@ -2290,7 +2290,7 @@ Transform:
   m_LocalScale: {x: 12.8220215, y: 7.414148, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1768659898
 Prefab:

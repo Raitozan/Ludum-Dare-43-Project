@@ -67,8 +67,7 @@ public class AbilityChooser : MonoBehaviour
 			switch (player.ability2)
 			{
 				case -1:
-					capacity2.sprite = null;
-					capacity2.color = new Color(1, 1, 1, 0);
+					capacity2.sprite = empty;
 					break;
 				case 0:
 					capacity2.sprite = dash;

@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad(this);
 
 		LevelTimer = LevelTime[actualLvl - 1];
+		playerAbility1 = startAbility1;
+		playerAbility2 = startAbility2;
 	}
 
 	private void Update()
@@ -43,6 +45,8 @@ public class GameManager : MonoBehaviour {
 	{
 		playerEnergy = 100;
 		LevelTimer = LevelTime[actualLvl - 1];
+		playerAbility1 = startAbility1;
+		playerAbility2 = startAbility2;
 		SceneManager.LoadScene(actualLvl);
 	}
 }
