@@ -177,8 +177,11 @@ public class Player : MonoBehaviour
 
 	public void DoubleJump()
 	{
-		if(canDoubleJump)
-
+		if (canDoubleJump)
+		{
+			velocity.y = jumpVelocity;
+			canDoubleJump = false;
+		}
 	}
 
 	public void changeAbility(int ind)
