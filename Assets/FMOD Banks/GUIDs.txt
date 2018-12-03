@@ -1,21 +1,23 @@
+{3e5b1165-c36b-4562-bb45-b2342d31e0e0} event:/game/level_1/belt
+{368cbb72-c8d1-4226-8d2b-d157498a3254} event:/game/level_1/bottle leaking
+{cb7d8d6b-455a-4c79-b700-761fa25ec099} event:/game/level_1/door
 {f6d04803-082d-4c46-b83a-f4885137007d} event:/game/level_1/power_strip
 {84acb60c-506e-4ec6-be70-a6428030c39f} event:/game/level_1/water_drops
-{3e5b1165-c36b-4562-bb45-b2342d31e0e0} event:/game/level_1/belt
-{cb7d8d6b-455a-4c79-b700-761fa25ec099} event:/game/level_1/door
-{368cbb72-c8d1-4226-8d2b-d157498a3254} event:/game/level_1/bottle leaking
 {d771c448-b140-4b44-8b7c-f532117d35a9} event:/game/level_2/fountain
+{c0c81b49-86bb-46e0-8948-e78439d14aaf} event:/robot/burn
 {612a8827-7978-434f-9635-a93bec94544c} event:/robot/dash
+{559b4f09-bb1d-428d-95bc-dd36fb065281} event:/robot/doublejump
 {24b7de3c-6e87-4fd8-8103-ecfa89edeb25} event:/robot/Footsteps_Floor
 {c283d051-3074-455d-b14a-778d5bc06deb} event:/robot/jump
 {743153b8-9e1f-4207-a9d5-e15dd0e5b9f9} event:/robot/move
-{c0c81b49-86bb-46e0-8948-e78439d14aaf} event:/robot/burn
-{559b4f09-bb1d-428d-95bc-dd36fb065281} event:/robot/doublejump
-{9b84eabf-c73a-401a-900a-cd8dcedb5527} event:/test
 {c32fab0c-090d-4c52-be35-08c07c1ee398} event:/ambience
 {56467f07-b54a-4872-b14a-ae6355c7c38b} event:/music
+{9b84eabf-c73a-401a-900a-cd8dcedb5527} event:/test
 {1395044b-298a-4c40-b2ee-d61f31864d0e} bus:/
 {063e336a-fab3-4bfb-a674-c64be14dbf41} bus:/Robot
 {f49c9bad-d522-4c6a-8501-ee0e87f77c5c} bus:/Robot/Movement
+{48dffea2-ea1d-4ba2-912e-16798492431c} bus:/Ambience
+{2d9b0878-5166-470c-866d-ca262eecbfcb} bus:/Music
 {f6937add-cfef-4685-a70d-e8d9e5d5fe53} bus:/Reverb
 {712232c3-4c65-4806-96e9-263f7a158e06} snapshot:/crouching
 {f24f6887-c1c4-48ef-8936-4aaf14d58092} bank:/Master Bank
