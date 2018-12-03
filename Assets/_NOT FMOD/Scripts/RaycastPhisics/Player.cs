@@ -56,8 +56,6 @@ public class Player : MonoBehaviour
 	public int ability2;
 	public Animator animator;
 
-	public int energy;
-
 	void Start ()
 	{
 		ability1 = GameManager.instance.playerAbility1;
@@ -110,7 +108,7 @@ public class Player : MonoBehaviour
 				abilities[ability1]();
 			if (Input.GetButtonDown("Ability2") && ability2 != -1 && !isCrouching)
 				abilities[ability2]();
-			if (energy <= 0)
+			if (GameManager.instance.playerEnergy <= 0)
 				GameManager.instance.ResetLvl();
 
 			float targetVelocityX = input.x * moveSpeed;
@@ -170,7 +168,7 @@ public class Player : MonoBehaviour
 		accelerationTimeAirborne -= dashAcceleration;
 		accelerationTimeGrounded -= dashAcceleration;
 		gravity = 0;
-		energy -= 5;
+		GameManager.instance.playerEnergy -= 5;
 		isDashing = true;
 		yield return new WaitForSeconds(dashDuration);
 		moveSpeed -= dashmoveSpeed;
@@ -185,7 +183,7 @@ public class Player : MonoBehaviour
 		float xPos = (isRight) ? 0.75f : -0.75f;
 		Burning b = Instantiate(burningPrefab, new Vector3(transform.position.x + xPos, transform.position.y+0.2f, transform.position.z), Quaternion.identity, transform).GetComponent<Burning>();
 		b.player = this;
-		energy -= 10;
+		GameManager.instance.playerEnergy -= 10;
 		isBurning = true;
         BurnSFX();
     }
@@ -197,7 +195,7 @@ public class Player : MonoBehaviour
 	IEnumerator climbCoroutine()
 	{
 		controller.maxClimbAngle = 90;
-		energy -= 15;
+		GameManager.instance.playerEnergy -= 15;
 		yield return new WaitForSeconds(climbDuration);
 		controller.maxClimbAngle = 80;
 	}
@@ -207,7 +205,7 @@ public class Player : MonoBehaviour
 		if (canDoubleJump)
 		{
 			velocity.y = jumpVelocity;
-			energy -= 5;
+			GameManager.instance.playerEnergy -= 5;
             DoubleJumpSFX();
             canDoubleJump = false;
 		}
