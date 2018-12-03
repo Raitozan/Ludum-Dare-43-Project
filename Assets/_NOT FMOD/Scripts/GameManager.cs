@@ -33,10 +33,10 @@ public class GameManager : MonoBehaviour {
 	{
 		LevelTimer -= Time.deltaTime;
 		if (LevelTimer <= 0)
-			resetLvl();
+			ResetLvl();
 	}
 
-	void resetLvl()
+	public void ResetLvl()
 	{
 		LevelTimer = LevelTime[actualLvl - 1];
 		SceneManager.LoadScene(actualLvl);

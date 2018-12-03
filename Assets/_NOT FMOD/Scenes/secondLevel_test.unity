@@ -438,6 +438,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 365a0a3423e21c040bf374c8c2127d50, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &200885094
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 122.642
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.078125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668106634613280, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c63012c408566cf4fb93177e8bd8fe86, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &209749138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4222079111275940, guid: 8fbc4b07811b9d445836e72f21dd7248,

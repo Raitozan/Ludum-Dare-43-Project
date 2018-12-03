@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
 			if (Input.GetButtonDown("Ability2") && ability2 != -1 && !isCrouching)
 				abilities[ability2]();
 			if (energy <= 0)
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+				GameManager.instance.ResetLvl();
 
 			float targetVelocityX = input.x * moveSpeed;
 			if (isCrouching)
