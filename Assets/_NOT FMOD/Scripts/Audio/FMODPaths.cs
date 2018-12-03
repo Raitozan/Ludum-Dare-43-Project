@@ -15,6 +15,8 @@
     //ambience
     public static readonly string AMBIENCE = "event:/ambience";
 
+    //music
+    public static readonly string MUSIC = "event:/music";
 
     // PARAMETERS
 
