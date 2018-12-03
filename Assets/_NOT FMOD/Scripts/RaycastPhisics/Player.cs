@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof(Controller2D))]
+[RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
 	[Header("Physics Settings")]
@@ -13,20 +13,20 @@ public class Player : MonoBehaviour
 	public float moveSpeed;
 	public float crouchModificator;
 
-    bool isMoving = false;
-    bool isCrouching;
+	bool isMoving = false;
+	bool isCrouching;
 
 	float gravity;
 	float jumpVelocity;
 
 	Vector3 velocity;
 	float velocityXSmoothing;
-    float sfxVelocity = 0f;
+	float sfxVelocity = 0f;
 
-    Controller2D controller;
+	Controller2D controller;
 
-    FMOD.Studio.EventInstance robotMovementSFX;
-    FMOD.Studio.EventInstance crouchingSFX;
+	FMOD.Studio.EventInstance robotMovementSFX;
+	FMOD.Studio.EventInstance crouchingSFX;
 
 	delegate void Ability();
 	List<Ability> abilities = new List<Ability>();
@@ -37,15 +37,15 @@ public class Player : MonoBehaviour
 	//DASH
 	[HideInInspector] public bool canDash;
 	[HideInInspector] public bool isDashing;
-	[Header("Dash Settings")]
+	[Header("Abilities")]
 	public float dashmoveSpeed;
 	public float dashDuration;
 	public float dashAcceleration;
-
-	//BURN
 	[HideInInspector]
 	public bool isRight = true;
 	public GameObject burningPrefab;
+	public float climbDuration;
+	public bool canDoubleJump;
 
 	void Start ()
 	{
@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
 			if (Input.GetButtonDown("Jump") && controller.collisions.below)
 			{
 				velocity.y = jumpVelocity;
+				canDoubleJump = true;
 				FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.ROBOT_JUMP, GetComponent<Transform>().position);  // jump sound      
 			}
 
@@ -92,6 +93,11 @@ public class Player : MonoBehaviour
 				StopCrouchingSFX();
 			}
 
+			if (Input.GetButtonDown("Ability1") && ability1 != -1 && !isCrouching)
+				abilities[ability1]();
+			if (Input.GetButtonDown("Ability2") && ability2 != -1 && !isCrouching)
+				abilities[ability2]();
+
 			float targetVelocityX = input.x * moveSpeed;
 			if (isCrouching)
 				targetVelocityX *= crouchModificator;
@@ -99,14 +105,11 @@ public class Player : MonoBehaviour
 			velocity.y += gravity * Time.deltaTime;
 			controller.Move(velocity * Time.deltaTime);
 
-			if (Input.GetButtonDown("Ability1") && ability1 != -1 && !isCrouching)
-				abilities[ability1]();
-			if (Input.GetButtonDown("Ability2") && ability2 != -1 && !isCrouching)
-				abilities[ability2]();
-
 			if (controller.collisions.below)
+			{
 				canDash = true;
-
+				canDoubleJump = false;
+			}
 
             if (targetVelocityX != 0 && (!Input.GetButtonDown("Jump"))) // checking if player moving, then executing MovementSFX
             {
@@ -162,12 +165,20 @@ public class Player : MonoBehaviour
 
 	public void Climb()
 	{
-		Debug.Log("Climb");
+		StartCoroutine(climbCoroutine());
+	}
+	IEnumerator climbCoroutine()
+	{
+		float normalAngle = controller.maxClimbAngle;
+		controller.maxClimbAngle = 90;
+		yield return new WaitForSeconds(climbDuration);
+		controller.maxClimbAngle = normalAngle;
 	}
 
 	public void DoubleJump()
 	{
-		Debug.Log("DoubleJump");
+		if(canDoubleJump)
+
 	}
 
 	public void changeAbility(int ind)
