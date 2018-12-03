@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 	float gravity;
 	float jumpVelocity;
 
+	[HideInInspector]
 	public Vector3 velocity;
 	float velocityXSmoothing;
 	float sfxVelocity = 0f;
@@ -32,10 +33,9 @@ public class Player : MonoBehaviour
 	delegate void Ability();
 	List<Ability> abilities = new List<Ability>();
 
+	[Header("Abilities")]
 	public int ability1 = -1;
 	public int ability2 = -1;
-
-	[Header("Abilities")]
 	public float dashmoveSpeed;
 	public float dashDuration;
 	public float dashAcceleration;

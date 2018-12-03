@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4911324684783202}
   - component: {fileID: 212545556379007836}
   - component: {fileID: 61705440234030098}
+  - component: {fileID: 95375396597391042}
   - component: {fileID: 114440361141018688}
   - component: {fileID: 114198656966679712}
   m_Layer: 8
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1835252997452530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.75, y: -18.43, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,8 +60,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.33958334, y: 1}
+    newSize: {x: 0.33958334, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -68,6 +69,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95375396597391042
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835252997452530}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 02eddfa36b2bd6243b4b2d723c682f15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114198656966679712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,18 +104,21 @@ MonoBehaviour:
   accelerationTimeGrounded: 0.1
   moveSpeed: 5
   crouchModificator: 0.5
+  velocity: {x: 0, y: 0, z: 0}
   ability1: 0
-  ability2: 1
-  canDash: 0
-  isDashing: 0
+  ability2: 0
   dashmoveSpeed: 40
   dashDuration: 0.05
   dashAcceleration: 0.09
+  canDash: 0
+  isDashing: 0
   isRight: 1
   burningPrefab: {fileID: 1848978684077532, guid: 9b0d230c4eeb8594b9e665731fac6734,
     type: 2}
+  isBurning: 0
   climbDuration: 2
   canDoubleJump: 0
+  animator: {fileID: 95375396597391042}
 --- !u!114 &114440361141018688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,12 +175,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3d5aec80e3a8f7c4ca732c52a2edd5e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 226ccc52c4544874fa6120a6e6e163a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.33958334, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
