@@ -3451,6 +3451,11 @@ Prefab:
       propertyPath: m_Name
       value: AbilityChooserClimb
       objectReference: {fileID: 0}
+    - target: {fileID: 114850424997139428, guid: 37f2604b3f938734b83e5b1e91e49feb,
+        type: 2}
+      propertyPath: abilityCost
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37f2604b3f938734b83e5b1e91e49feb, type: 2}
   m_IsPrefabAsset: 0
@@ -4771,6 +4776,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 0.5976563
+      objectReference: {fileID: 0}
+    - target: {fileID: 114850424997139428, guid: 37f2604b3f938734b83e5b1e91e49feb,
+        type: 2}
+      propertyPath: abilityCost
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37f2604b3f938734b83e5b1e91e49feb, type: 2}

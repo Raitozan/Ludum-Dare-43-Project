@@ -16,6 +16,7 @@ public class AbilityChooser : MonoBehaviour
 	public bool waitingForInput = false;
 
 	public int abilityId;
+	public int abilityCost;
 
 	private void Update()
 	{
@@ -25,6 +26,7 @@ public class AbilityChooser : MonoBehaviour
 			{
 				player.ability1 = abilityId;
 				GameManager.instance.playerAbility1 = abilityId;
+				GameManager.instance.playerEnergy += abilityCost;
 				Time.timeScale = 1;
 				GameManager.instance.gamePaused = false;
 				player.velocity = Vector3.zero;
