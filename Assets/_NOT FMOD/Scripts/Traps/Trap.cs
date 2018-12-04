@@ -11,6 +11,7 @@ public class Trap : MonoBehaviour {
 	public bool moving;
 	public float distanceToMove;
 	public Transform player;
+	public bool destroyable;
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,7 +22,7 @@ public class Trap : MonoBehaviour {
 		}
 		else
 		{
-			if (lifeTime != -1)
+			if (lifeTime != -1 && destroyable)
 			{
 				lifeTime -= Time.deltaTime;
 				if (lifeTime <= 0)
@@ -41,7 +42,8 @@ public class Trap : MonoBehaviour {
 			if (!p.isDashing)
 			{
 				GameManager.instance.playerEnergy -= damage;
-				Destroy(gameObject);
+				if(destroyable)
+					Destroy(gameObject);
 			}
 		}
 	}
