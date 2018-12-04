@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/_NOT FMOD/Scenes/Level2Final.unity
     guid: 89abccd733d27944587dd303dc1196fb
   - enabled: 1
-    path: Assets/_NOT FMOD/Scenes/thirdlevelgood.unity
+    path: Assets/_NOT FMOD/Scenes/Level3Final.unity
     guid: 0d4266d656766884c8231ee79f079182
+  - enabled: 1
+    path: Assets/_NOT FMOD/Scenes/End.unity
+    guid: 44915c61efea87942ab13004fb25e758
   m_configObjects: {}
