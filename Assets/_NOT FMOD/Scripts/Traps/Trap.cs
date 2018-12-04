@@ -8,18 +8,29 @@ public class Trap : MonoBehaviour {
 	public float speed;
 	public int damage;
 	public float lifeTime;
+	public bool moving;
+	public float distanceToMove;
+	public Transform player;
 	
 	// Update is called once per frame
 	void Update () {
-		if(lifeTime != -1)
+		if (!moving)
 		{
-			lifeTime -= Time.deltaTime;
-			if (lifeTime <= 0)
-				Destroy(gameObject);
+			if ((player.position - transform.position).magnitude <= distanceToMove)
+				moving = true;
 		}
-		Vector3 velocity = movement * speed * Time.deltaTime;
+		else
+		{
+			if (lifeTime != -1)
+			{
+				lifeTime -= Time.deltaTime;
+				if (lifeTime <= 0)
+					Destroy(gameObject);
+			}
+			Vector3 velocity = movement * speed * Time.deltaTime;
 
-		transform.Translate(velocity);
+			transform.Translate(velocity);
+		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
