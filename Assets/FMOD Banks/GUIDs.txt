@@ -3,6 +3,7 @@
 {cb7d8d6b-455a-4c79-b700-761fa25ec099} event:/game/level_1/door
 {f6d04803-082d-4c46-b83a-f4885137007d} event:/game/level_1/power_strip
 {84acb60c-506e-4ec6-be70-a6428030c39f} event:/game/level_1/water_drops
+{f554d57e-be14-4ccd-8d28-aee3ede7a23e} event:/game/level_1/water_drops2
 {d771c448-b140-4b44-8b7c-f532117d35a9} event:/game/level_2/fountain
 {c0c81b49-86bb-46e0-8948-e78439d14aaf} event:/robot/burn
 {612a8827-7978-434f-9635-a93bec94544c} event:/robot/dash
@@ -11,6 +12,7 @@
 {c283d051-3074-455d-b14a-778d5bc06deb} event:/robot/jump
 {743153b8-9e1f-4207-a9d5-e15dd0e5b9f9} event:/robot/move
 {c32fab0c-090d-4c52-be35-08c07c1ee398} event:/ambience
+{795cb268-5d62-456b-9f16-2ef792ac074a} event:/fadetest
 {56467f07-b54a-4872-b14a-ae6355c7c38b} event:/music
 {9b84eabf-c73a-401a-900a-cd8dcedb5527} event:/test
 {1395044b-298a-4c40-b2ee-d61f31864d0e} bus:/
