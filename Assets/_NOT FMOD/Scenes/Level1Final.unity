@@ -701,9 +701,9 @@ MonoBehaviour:
   actualLvl: 1
   LevelTimer: 0
   LevelTime:
-  - 60
-  - 60
-  - 60
+  - 120
+  - 120
+  - 120
   startAbility1: -1
   startAbility2: -1
   playerAbility1: -1
@@ -2139,8 +2139,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 490069857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 117, y: 4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 117, y: 2.49, z: 0}
+  m_LocalScale: {x: 1, y: 3.8245313, z: 1}
   m_Children: []
   m_Father: {fileID: 521842961}
   m_RootOrder: 2
