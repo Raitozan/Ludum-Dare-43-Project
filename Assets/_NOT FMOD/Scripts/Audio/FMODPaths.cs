@@ -26,6 +26,7 @@
     public static readonly string PIANO_CHORDS = "PianoChords";
     public static readonly string BEAT = "Beat";
     public static readonly string BASS= "Bass";
+    public static readonly string SYNTH = "Synth";
     public static readonly string End = "End";
 
 
