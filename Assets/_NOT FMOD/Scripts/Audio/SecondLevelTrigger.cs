@@ -11,6 +11,7 @@ public class SecondLevelTrigger : MonoBehaviour {
         {           
             AudioManager.instance.SetAmbienceParameter(AudioManager.instance.ambienceInstance, FMODPaths.LEVEL_NUMBER, 2);
             AudioManager.instance.SetMusicParameter(AudioManager.instance.musicInstance, FMODPaths.SYNTH, 0);
+            AudioManager.instance.SetMusicParameter(AudioManager.instance.musicInstance, FMODPaths.VIOLIN, 1);
         }
     }
 
