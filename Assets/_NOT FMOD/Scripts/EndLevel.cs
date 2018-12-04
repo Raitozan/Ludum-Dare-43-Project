@@ -11,8 +11,6 @@ public class EndLevel : MonoBehaviour {
 			GameManager.instance.startAbility1 = GameManager.instance.playerAbility1;
 			GameManager.instance.startAbility2 = GameManager.instance.playerAbility2;
 			GameManager.instance.ResetLvl();
-            AudioManager.instance.SetMusicParameter(AudioManager.instance.musicInstance, FMODPaths.BEAT, 1);
-            AudioManager.instance.SetMusicParameter(AudioManager.instance.musicInstance, FMODPaths.BASS, 1);
         }
 	}
 }

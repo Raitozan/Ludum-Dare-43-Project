@@ -138,6 +138,8 @@ public class AudioManager : MonoBehaviour {
 
      AudioManager.SetMusicParameter(audioManager.musicInstance, FMODPaths.BATTERY_LEVEL, VARIABLE);
 
+                AudioManager.instance.SetMusicParameter(AudioManager.instance.musicInstance, FMODPaths.BEAT, 1);
+            AudioManager.instance.SetMusicParameter(AudioManager.instance.musicInstance, FMODPaths.BASS, 1);
 
 
        */
