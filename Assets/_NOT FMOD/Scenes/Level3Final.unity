@@ -2734,8 +2734,8 @@ MonoBehaviour:
   LevelTimer: 0
   LevelTime:
   - 60
-  - 60
-  - 60
+  - 90
+  - 90
   startAbility1: 0
   startAbility2: 3
   playerAbility1: 0
